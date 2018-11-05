@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 import demo.model.Person;
 
 @Repository
-//RestResource
 public interface PersonRepository extends CrudRepository<Person, Long> {
 
 	

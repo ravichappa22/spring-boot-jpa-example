@@ -5,13 +5,20 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import demo.model.Person;
 import demo.repository.PersonRepository;
 
+/**
+ * This service calls the DB directly for storing data
+ * @author CORP\rchappa1
+ *
+ */
 @Service
-public class PersionService {
+@Profile("default")
+public class PersionService implements IPersonService{
 	
 	@Autowired
 	private PersonRepository personRepo;
