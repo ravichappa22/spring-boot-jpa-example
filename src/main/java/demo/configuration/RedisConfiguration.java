@@ -2,11 +2,7 @@ package demo.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
-import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.context.annotation.Profile;;
 
 import demo.model.Person;
 
@@ -14,7 +10,7 @@ import demo.model.Person;
 @Profile("redis")
 public class RedisConfiguration {
 	
-	@Bean
+	/*@Bean
 	public JedisConnectionFactory redisConnectionFactory() {
 		RedisStandaloneConfiguration config = new RedisStandaloneConfiguration("localhost", 6379);
 		return new JedisConnectionFactory(config);
@@ -27,6 +23,6 @@ public class RedisConfiguration {
 		redisTemplate.setConnectionFactory(redisConnectionFactory());
 		redisTemplate.setKeySerializer(new StringRedisSerializer());
 		return redisTemplate;
-	}
+	}*/
 
 }

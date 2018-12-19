@@ -5,16 +5,15 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import demo.model.Person;
 
 @Service
 @Profile("redis")
-public class PersonRedisService implements IPersonService {
+public class PersonRedisService {
 	
-	@Autowired
+	/*@Autowired
 	private RedisTemplate<String, Person> redisTemplate;
 
 	@Override
@@ -46,5 +45,5 @@ public class PersonRedisService implements IPersonService {
 	public List<Person> retrievePerson(String firstName, String lastName) {
 		return null;
 	}
-
+*/
 }
