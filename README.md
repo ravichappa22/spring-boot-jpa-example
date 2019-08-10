@@ -4,11 +4,11 @@ if we run this in "redis" profile that hits resdis server.
 
 Requests:
 
-curl -X POST -H 'Content-Type: application/json' -i http://localhost:8080/api/person --data '{
+curl -X POST -H 'Content-Type: application/json' -i http://localhost:8080/api/bootjpa/person --data '{
 "firstName":"Ravi",
 "lastName":"Chappa"
 }'
 
-curl -X GET -H 'Content-Type: application/json' -i http://localhost:8080/api/persons
+curl -X GET -H 'Content-Type: application/json' -i http://localhost:8080/api/bootjpa/persons
 
 

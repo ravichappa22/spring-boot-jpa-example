@@ -14,7 +14,7 @@ import demo.implementation.IPersonService;
 import demo.model.Person;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping
 public class PersonController {
 	
 	@Autowired
