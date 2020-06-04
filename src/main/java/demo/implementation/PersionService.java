@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,9 @@ import demo.repository.PersonRepository;
 @Profile("default")
 public class PersionService implements IPersonService{
 	
+	@Value("${env.prop.def.prop:novalue}")
+	private String defProp;
+	
 	@Autowired
 	private PersonRepository personRepo;
 	
@@ -34,6 +38,7 @@ public class PersionService implements IPersonService{
 	
 	
 	public Person savePersion(Person person) {
+		System.out.println("defProp =" + defProp);
 	    personRepo.save(person);
 	    return person;
 	}
