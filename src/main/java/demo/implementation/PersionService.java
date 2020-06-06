@@ -45,6 +45,7 @@ public class PersionService implements IPersonService{
 	
 	
 	public Person retrieveByLastName(String lastName) {
+		System.out.println("defProp =" + defProp);
 		return personRepo.findByLastName(lastName);
 	}
 	
