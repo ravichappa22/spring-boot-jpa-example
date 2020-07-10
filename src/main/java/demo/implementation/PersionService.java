@@ -23,11 +23,16 @@ public class PersionService implements IPersonService{
 	
 	@Value("${env.prop.def.prop:novalue}")
 	private String defProp;
+	@Value("${message.user:}")
+	private String messageuser;
+	@Value("${message.password:}")
+	private String messagepassword;
 	
 	@Autowired
 	private PersonRepository personRepo;
 	
 	public List<Person> retrievePersons(){
+		System.out.println("defProp =" + defProp + "message user=" + messageuser + "message password = " + messagepassword);
 		Iterator<Person> persons =personRepo.findAll().iterator();
 		List<Person> personList = new ArrayList<Person>();
 		while(persons.hasNext()) {
@@ -38,18 +43,21 @@ public class PersionService implements IPersonService{
 	
 	
 	public Person savePersion(Person person) {
-		System.out.println("defProp =" + defProp);
+		System.out.println("defProp =" + defProp + "message user=" + messageuser + "message password = " + messagepassword);
 	    personRepo.save(person);
 	    return person;
 	}
 	
 	
 	public Person retrieveByLastName(String lastName) {
-		System.out.println("defProp =" + defProp);
+		System.out.println("defProp =" + defProp + "message user=" + messageuser + "message password = " + messagepassword);
+
 		return personRepo.findByLastName(lastName);
 	}
 	
 	public List<Person> retrievePerson(String firstName, String lastName) {
+		System.out.println("defProp =" + defProp + "message user=" + messageuser + "message password = " + messagepassword);
+
 		return personRepo.findByPerson(firstName, lastName);
 	}
 
